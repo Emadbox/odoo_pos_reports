@@ -10,7 +10,7 @@
 								<strong>Sales Summary</strong>
 							</div>
 							<t t-if="doc_id.only_summary == True">
-								<table style="width:100%;margin-top:15px;">
+								<table style="width:90%;margin-top:15px;">
 									<tr>
 										<td class="text-left">
 											Report Date
@@ -28,7 +28,7 @@
 										</td>
 									</tr>
 								</table>
-								<table style="width:100%;margin-top:15px;">
+								<table style="width:90%;margin-top:15px;">
 									<tr>
 										<td class="text-left">
 											Start Date
@@ -46,7 +46,7 @@
 										</td>
 									</tr>
 								</table>
-								<table style="width:100%;margin-top:15px;">
+								<table style="width:90%;margin-top:15px;">
 									<tr>
 										<td class="text-left">
 											Sales
@@ -106,7 +106,7 @@
 										</tr>
 									</t>
 								</table>
-								<table style="width:100%;margin-top:15px;">
+								<table style="width:90%;margin-top:15px;">
 									<tr t-foreach="doc_id.get_payments()" t-as="l">
 										<t t-if="l.get('name')">
 											<td class="text-left">
@@ -122,7 +122,7 @@
 									<div class="text-left" style="margin-top:10px !important;">
 										Department Sales:
 									</div>
-									<table style="width:100%;margin-top:15px;">
+									<table style="width:90%;margin-top:15px;">
 										<tr t-foreach="doc_id.get_product_category()" t-as="l">
 											<td class="text-left">
 												<span t-esc="doc_id.get_product_name(l.get('pos_categ_id')) or 'Others'"/>
@@ -132,7 +132,7 @@
 											</td>
 										</tr>
 									</table>
-									<table style="width:100%;">
+									<table style="width:90%;">
 										<tr>
 											<td style="width:50%;">
 											</td>
@@ -141,7 +141,7 @@
 											</td>
 										</tr>
 									</table>
-									<table style="width:100%">
+									<table style="width:90%">
 										<tr>
 											<td style="width:50%;">
 											</td>
@@ -155,7 +155,7 @@
 
 
 							<t t-if="doc_id.only_summary != True">
-								<table style="width:100%;margin-top:15px;">
+								<table style="width:90%;margin-top:15px;">
 									<tr>
 										<td class="text-left">
 										 Report Date time
@@ -165,7 +165,7 @@
 									 </td>
 									</tr>
 								</table>
-								<table style="width:100%;">
+								<table style="width:90%;">
 									<tr>
 										<td class="text-left">
 											Start Date
@@ -186,7 +186,7 @@
 								<t t-foreach="doc_id.get_user_wise_data()" t-as="users_dict">
 								   <br/>
 								   <strong>Salesperson :</strong> <span t-esc="users_dict"/>
-								   <table style="width:100%;">
+								   <table style="width:90%;">
 										<tr>
 											<td class="text-left">
 												Sales
@@ -246,7 +246,7 @@
 											</tr>
 										</t>
 									</table>
-									<table style="width:100%;margin-top:15px;">
+									<table style="width:90%;margin-top:15px;">
 										<tr t-foreach="users_dict_value['payment']" t-as="l">
 											<t t-if="l.get('name')">
 												<td class="text-left">
@@ -262,7 +262,7 @@
 										<div class="text-left" style="margin-top:10px !important;">
 											Department Sales:
 										</div>
-										<table style="width:100%;margin-top:15px;">
+										<table style="width:90%;margin-top:15px;">
 											<tr t-foreach="users_dict_value['product_category']" t-as="l">
 												<td class="text-left">
 													<span t-esc="doc_id.get_product_name(l.get('pos_categ_id')) or 'Others'"/>
@@ -272,7 +272,7 @@
 												</td>
 											</tr>
 										</table>
-										<table style="width:100%;">
+										<table style="width:90%;">
 											<tr>
 												<td style="width:50%;">
 												</td>
@@ -281,7 +281,7 @@
 												</td>
 											</tr>
 										</table>
-										<table style="width:100%">
+										<table style="width:90%">
 											<tr>
 												<td style="width:50%;">
 												</td>
@@ -294,7 +294,7 @@
 								</t>
 								<strong>Summary</strong>
 								<br/>
-								<table style="width:100%;">
+								<table style="width:90%;">
 									<tr>
 										<td class="text-left">
 											Sales
@@ -354,7 +354,7 @@
 										</tr>
 									</t>
 								</table>
-								<table style="width:100%;margin-top:15px;">
+								<table style="width:90%;margin-top:15px;">
 									<tr t-foreach="doc_id.get_payments()" t-as="l">
 										<t t-if="l.get('name')">
 											<td class="text-left">
@@ -370,7 +370,7 @@
 									<div class="text-left" style="margin-top:10px !important;">
 										Department Sales:
 									</div>
-									<table style="width:100%;margin-top:15px;">
+									<table style="width:90%;margin-top:15px;">
 										<tr t-foreach="doc_id.get_product_category()" t-as="l">
 											<td class="text-left">
 												<span t-esc="doc_id.get_product_name(l.get('pos_categ_id')) or 'Others'"/>
@@ -380,7 +380,7 @@
 											</td>
 										</tr>
 									</table>
-									<table style="width:100%;">
+									<table style="width:90%;">
 										<tr>
 											<td style="width:50%;">
 											</td>
@@ -389,7 +389,7 @@
 											</td>
 										</tr>
 									</table>
-									<table style="width:100%">
+									<table style="width:90%">
 										<tr>
 											<td style="width:50%;">
 											</td>

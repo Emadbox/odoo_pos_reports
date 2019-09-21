@@ -9,7 +9,7 @@
                         <strong>Z Report</strong>
                     </div>
                     <t t-foreach="docs" t-as="o">
-                        <table style="width:100%;margin-top:15px;">
+                        <table style="width:90%;margin-top:15px;">
                             <tr>
                                 <td class="text-left">
                                     Report Date
@@ -27,7 +27,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <table style="width:100%;margin-top:15px;">
+                        <table style="width:90%;margin-top:15px;">
                             <tr>
                                 <td class="text-left">
                                     Register #
@@ -77,7 +77,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <table style="width:100%;margin-top:15px;">
+                        <table style="width:90%;margin-top:15px;">
                             <tr>
                                 <td class="text-left">
                                     Opening Total
@@ -166,7 +166,7 @@
                             </tr>
                          </t>
                         </table>
-                        <table style="width:100%;margin-top:15px;">
+                        <table style="width:90%;margin-top:15px;">
                             <tr>
                                 <td class="text-left">
                                     Closing Total
@@ -184,7 +184,7 @@
                                 </td>
                             </tr>
                         </table>
-                        <table style="width:100%;margin-top:15px;">
+                        <table style="width:90%;margin-top:15px;">
                             <tr t-foreach="o.get_journal_amount()" t-as="l">
                                 <t t-if="l.get('journal_id')">
                                     <td class="text-left">
@@ -200,7 +200,7 @@
                             <div class="text-left" style="margin-top:10px !important;">
                                 Department Sales:
                             </div>
-                            <table style="width:100%;margin-top:15px;">
+                            <table style="width:90%;margin-top:15px;">
                                 <tr t-foreach="o.get_product_category()" t-as="l">
                                     <td class="text-left">
                                         <span t-esc="o.get_product_name(l.get('pos_categ_id')) or 'Others'"/>
@@ -210,7 +210,7 @@
                                     </td>
                                 </tr>
                             </table>
-                            <table style="width:100%;">
+                            <table style="width:90%;">
                                 <tr>
                                     <td style="width:50%;">
                                     </td>
@@ -219,7 +219,7 @@
                                     </td>
                                 </tr>
                             </table>
-                            <table style="width:100%">
+                            <table style="width:90%">
                                 <tr>
                                     <td style="width:50%;">
                                     </td>
