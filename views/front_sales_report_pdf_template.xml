@@ -206,7 +206,7 @@
                 <table style="width:90%">
                   <tr>
                     <td style="width:50%;" class="text-left">
-                      Total General Don Enrique
+                      Total General
                     </td>
                     <td style="width:50%; !important" class="text-right">
                       <span t-field="o.currency_id.symbol"/><span t-esc="'{0:.2f}'.format(o.get_product_cate_total_x_don_enrique())"/>
