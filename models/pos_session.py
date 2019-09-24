@@ -511,13 +511,11 @@ class pos_session(models.Model):
                                 lst['price'] = lst['price'] + (line.qty * line.price_unit)
                                 lst['qty'] = lst.get('qty') or 0.0 + line.qty
                                 flag = True
-                                balance_end_real_don_enrique += (abs(line.qty) * abs(line.price_unit))
                         else:
                             if lst.get('pos_categ_id') == '':
                                 lst['price'] = lst['price'] + (line.qty * line.price_unit)
                                 lst['qty'] = lst.get('qty') or 0.0 + line.qty
                                 flag = True
-                                balance_end_real_don_enrique += (abs(line.qty) * abs(line.price_unit))
                     if not flag:
                         if line.product_id.pos_categ_id:
                             product_dict.update({
