@@ -533,7 +533,9 @@ class pos_session(models.Model):
                             balance_end_real_don_enrique_1 += (abs(line.qty) * abs(line.price_unit))
                         product_list.append(product_dict)
         for x in product_list:
-            balance_end_real_don_enrique_2 += abs(x.get('price'))
+            price_loop = x.get('price')
+            if price_loop > 0:
+                balance_end_real_don_enrique_2 += abs(x.get('price'))
 
         return balance_end_real_don_enrique_2
     # comment:TITO///////////////////////////////////////////////////////////////////////////////////////////////////
