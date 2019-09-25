@@ -539,6 +539,55 @@ class pos_session(models.Model):
 
         return balance_end_real_don_enrique_2
     # comment:TITO///////////////////////////////////////////////////////////////////////////////////////////////////
+    # comment:TITO///////////////////////////////////////////////////////////////////////////////////////////////////
+    @api.multi
+    def get_product_category_x_don_enrique_real(self):
+        product_list = []
+        balance_end_real_don_enrique_real = 0.0
+        balance_end_real = 0.0
+        if self and self.order_ids:
+            for order in self.order_ids:
+                for line in order.lines:
+                    balance_end_real += (line.qty * line.price_unit)
+                    flag = False
+                    product_dict = {}
+                    for lst in product_list:
+                        if line.product_id.pos_categ_id:
+                            if lst.get('pos_categ_id') == line.product_id.pos_categ_id.id:
+                                lst['price'] = lst['price'] + (line.qty * line.price_unit)
+                                lst['qty'] = lst.get('qty') or 0.0 + line.qty
+                                flag = True
+                        else:
+                            if lst.get('pos_categ_id') == '':
+                                lst['price'] = lst['price'] + (line.qty * line.price_unit)
+                                lst['qty'] = lst.get('qty') or 0.0 + line.qty
+                                flag = True
+                    if not flag:
+                        if line.product_id.pos_categ_id:
+                            product_dict.update({
+                                        'pos_categ_id': line.product_id.pos_categ_id and line.product_id.pos_categ_id.id or '',
+                                        'price': (line.qty * line.price_unit),
+                                        'qty': line.qty
+                                    })
+                        else:
+                            product_dict.update({
+                                        'pos_categ_id': line.product_id.pos_categ_id and line.product_id.pos_categ_id.id or '',
+                                        'price': (line.qty * line.price_unit),
+                                    })
+                        product_list.append(product_dict)
+        for x in product_list:
+            price_loop = x.get('price')
+            if price_loop > 0:
+                flags = 'positivo'
+            else:
+                category_id = x.get('pos_categ_id')
+                if category_id:
+                    category_name = self.env['pos.category'].browse([category_id]).name
+                if category_name == 'BECA':
+                    price_beca = abs(price_loop)
+        balance_end_real_don_enrique_real = balance_end_real + price_beca
+        return balance_end_real_don_enrique_real
+    # comment:TITO///////////////////////////////////////////////////////////////////////////////////////////////////
 
     @api.multi
     def get_payments_x(self):
