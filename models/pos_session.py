@@ -499,7 +499,8 @@ class pos_session(models.Model):
     @api.multi
     def get_product_category_x_don_enrique(self):
         product_list = []
-        balance_end_real_don_enrique = 0.0
+        balance_end_real_don_enrique_1 = 0.0
+        balance_end_real_don_enrique_2 = 0.0
         if self and self.order_ids:
             for order in self.order_ids:
                 for line in order.lines:
@@ -523,15 +524,18 @@ class pos_session(models.Model):
                                         'price': (line.qty * line.price_unit),
                                         'qty': line.qty
                                     })
-                            balance_end_real_don_enrique += (abs(line.qty) * abs(line.price_unit))
+                            balance_end_real_don_enrique_1 += (abs(line.qty) * abs(line.price_unit))
                         else:
                             product_dict.update({
                                         'pos_categ_id': line.product_id.pos_categ_id and line.product_id.pos_categ_id.id or '',
                                         'price': (line.qty * line.price_unit),
                                     })
-                            balance_end_real_don_enrique += (abs(line.qty) * abs(line.price_unit))
+                            balance_end_real_don_enrique_1 += (abs(line.qty) * abs(line.price_unit))
                         product_list.append(product_dict)
-        return balance_end_real_don_enrique
+        for x in product_list:
+            balance_end_real_don_enrique_2 += abs(x.get('price'))
+
+        return balance_end_real_don_enrique_2
     # comment:TITO///////////////////////////////////////////////////////////////////////////////////////////////////
 
     @api.multi
