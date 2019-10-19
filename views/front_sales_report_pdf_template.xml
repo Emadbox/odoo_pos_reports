@@ -9,7 +9,7 @@
 							<div align="center" style="border:1px solid black;margin:0 auto;padding:0 auto;font-size:25px">
 								<strong>X Report</strong>
 							</div>
-							<div align="center" style="margin:0 auto;padding:0 auto;font-size:20px;margin-top:8px;">
+							<!--<div align="center" style="margin:0 auto;padding:0 auto;font-size:20px;margin-top:8px;">
 								<div style="font-size:13px;">
 									<t t-if="o.get_company_data_x().name">
 										<t t-esc="o.get_company_data_x().name" /><br />
@@ -39,7 +39,7 @@
 										Website: <t t-esc="o.get_company_data_x().website" /><br />
 									</t>
 								</div>
-							</div>
+							</div> -->
 							<table style="width:90%;margin-top:15px;">
 								<tr>
 									<td class="text-left">
@@ -109,38 +109,98 @@
 										<span t-field="o.currency_id.symbol"/><span t-esc="o.cash_register_balance_start"/>
 									</td>
 								</tr>
-								<tr>
+                <tr>
+                  <td style="width:50%;" class="text-left">
+                    Ventas
+                  </td>
+                  <td style="width:50%; !important" class="text-right">
+                    <span t-field="o.currency_id.symbol"/><span t-esc="'{0:.2f}'.format(o.get_product_cate_total_x())"/>
+                  </td>
+                </tr>
+
+                <!-- TITO ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                <!-- TITO ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+                          <!--        <table style="width:90%"> -->
+                                  <tr>
+                                    <td style="width:50%;" class="text-left">
+                                      Pagos
+                                    </td>
+                                    <td style="width:50%; !important" class="text-right">
+                                      <span t-field="o.currency_id.symbol"/><span t-esc="'{0:.2f}'.format(o.get_product_category_x_don_enrique_real_get_pagos())"/>
+                                    </td>
+                                  </tr>
+                        <!--                </table>-->
+                <!-- TITO ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                <!-- TITO ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+                            <!--        <table style="width:90%"> -->
+                                  <tr>
+                                    <td style="width:50%;" class="text-left">
+                                      Beca
+                                    </td>
+                                    <td style="width:50%; !important" class="text-right">
+                                      <span t-field="o.currency_id.symbol"/><span t-esc="'{0:.2f}'.format(o.get_product_category_x_don_enrique_real_get_beca())"/>
+                                    </td>
+                                  </tr>
+                          <!--                </table>-->
+                <!-- TITO ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+                <!--        <table style="width:90%"> -->
+                                    <tr>
+                                      <td style="width:50%;" class="text-left">
+                                        Total General
+                                      </td>
+                                      <td style="width:50%; !important" class="text-right">
+                                        <span t-field="o.currency_id.symbol"/><span t-esc="'{0:.2f}'.format(o.get_product_category_x_don_enrique())"/>
+                                      </td>
+                                    </tr>
+                  <!--                </table>-->
+                  <!-- TITO ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+                <!-- TITO ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+                            <!--        <table style="width:90%"> -->
+                                  <tr>
+                                    <td style="width:50%;" class="text-left">
+                                      Total Real
+                                    </td>
+                                    <td style="width:50%; !important" class="text-right">
+                                      <span t-field="o.currency_id.symbol"/><span t-esc="'{0:.2f}'.format(o.get_product_category_x_don_enrique_real())"/>
+                                    </td>
+                                  </tr>
+                          <!--                </table>-->
+                <!-- TITO ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+				<!--				<tr>
 									<td class="text-left">
 										Sales
 									</td>
 									<td class="text-right">
 										<span t-field="o.currency_id.symbol"/><span t-esc="'{0:.2f}'.format(o.get_total_sales_x())"/>
 									</td>
-								</tr>
-								<tr>
+								</tr> -->
+					<!--			<tr>
 									<td class="text-left">
 										Returns
 									</td>
 									<td class="text-right">
 										<span t-esc="o.get_total_returns_x()" t-esc-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
 									</td>
-								</tr>
-								<tr>
+								</tr> -->
+						<!--		<tr>
 									<td class="text-left">
 										Tax
 									</td>
 									<td class="text-right">
 										<span t-esc="o.get_total_tax_x()" t-esc-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
 									</td>
-								</tr>
-								<tr>
+								</tr> -->
+						<!--		<tr>
 									<td class="text-left">
 										Discount Amount
 									</td>
 									<td class="text-right">
 										<span t-esc="o.get_total_discount_x()" t-esc-options='{"widget": "monetary", "display_currency": "o.currency_id"}'/>
 									</td>
-								</tr>
+								</tr> -->
 								<tr>
 									<td class="text-left">
 										Gross Total
@@ -171,7 +231,7 @@
 							<t t-if="o.get_product_category()">
 								<div align="center" style="margin-top:10px !important;">
 									============================<br/>
-									Department Sales
+									Desglose Ventas
 								</div>
 								<table style="width:90%;margin-top:15px;">
 									<tr t-foreach="o.get_product_category_x()" t-as="l">
@@ -195,25 +255,40 @@
 								<table style="width:90%">
 									<tr>
 										<td style="width:50%;" class="text-left">
-											Total
+											Ventas
 										</td>
 										<td style="width:50%; !important" class="text-right">
 											<span t-field="o.currency_id.symbol"/><span t-esc="'{0:.2f}'.format(o.get_product_cate_total_x())"/>
 										</td>
 									</tr>
 								</table>
-                <!-- TITO ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-                                <table style="width:90%">
-                                  <tr>
-                                    <td style="width:50%;" class="text-left">
-                                      Total Real
-                                    </td>
-                                    <td style="width:50%; !important" class="text-right">
-                                      <span t-field="o.currency_id.symbol"/><span t-esc="'{0:.2f}'.format(o.get_product_category_x_don_enrique_real())"/>
-                                    </td>
-                                  </tr>
-                                </table>
-                <!-- TITO ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<!-- TITO ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+                <table style="width:90%">
+                  <tr>
+                    <td style="width:50%;" class="text-left">
+                      Pagos
+                    </td>
+                    <td style="width:50%; !important" class="text-right">
+                      <span t-field="o.currency_id.symbol"/><span t-esc="'{0:.2f}'.format(o.get_product_category_x_don_enrique_real_get_pagos())"/>
+                    </td>
+                  </tr>
+                </table>
+<!-- TITO ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+<!-- TITO ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+                <table style="width:90%">
+                  <tr>
+                    <td style="width:50%;" class="text-left">
+                      Beca
+                    </td>
+                    <td style="width:50%; !important" class="text-right">
+                      <span t-field="o.currency_id.symbol"/><span t-esc="'{0:.2f}'.format(o.get_product_category_x_don_enrique_real_get_beca())"/>
+                    </td>
+                  </tr>
+                </table>
+<!-- TITO ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
 <!-- TITO ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
                 <table style="width:90%">
                   <tr>
@@ -226,7 +301,18 @@
                   </tr>
                 </table>
 <!-- TITO ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
-
+<!-- TITO ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+                <table style="width:90%">
+                  <tr>
+                    <td style="width:50%;" class="text-left">
+                      Total Real
+                    </td>
+                    <td style="width:50%; !important" class="text-right">
+                      <span t-field="o.currency_id.symbol"/><span t-esc="'{0:.2f}'.format(o.get_product_category_x_don_enrique_real())"/>
+                    </td>
+                  </tr>
+                </table>
+<!-- TITO ////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 							</t>
 							<table style="width:90%;margin-top:15px;">
 								<t t-set="total" t-value="0"/>
