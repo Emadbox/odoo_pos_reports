@@ -594,6 +594,7 @@ class pos_session(models.Model):
         product_list = []
         balance_end_real_don_enrique_real = 0.0
         balance_end_real = 0.0
+        price_beca = 0
         if self and self.order_ids:
             for order in self.order_ids:
                 for line in order.lines:
